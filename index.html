@@ -81,7 +81,90 @@ cursor:pointer;
 .stat-card:hover{
 transform:translateY(-12px) scale(1.03);
 box-shadow:0 0 60px rgba(0,140,255,0.9);
-}    
+}
+.hero{
+background:linear-gradient(-45deg,#0d0d0d,#0f172a,#001f3f,#0d0d0d);
+background-size:400% 400%;
+animation:gradientBG 12s ease infinite;
+}
+
+@keyframes gradientBG{
+0%{
+background-position:0% 50%;
+}
+50%{
+background-position:100% 50%;
+}
+100%{
+background-position:0% 50%;
+}
+}
+
+.btn{
+display:inline-block;
+margin-top:20px;
+padding:14px 30px;
+border-radius:12px;
+background:#0099ff;
+color:white;
+text-decoration:none;
+font-weight:bold;
+transition:0.3s ease;
+box-shadow:0 0 20px rgba(0,153,255,0.5);
+}
+
+.btn:hover{
+transform:scale(1.08);
+box-shadow:0 0 40px rgba(0,153,255,1);
+background:#00b7ff;
+}
+
+.card{
+transition:0.4s ease;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 35px rgba(255,255,255,0.15);
+}
+
+.section{
+animation:fadeUp 1s ease;
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+.typing{
+overflow:hidden;
+white-space:nowrap;
+border-right:3px solid #00aaff;
+width:0;
+animation:typing 3s steps(20,end) forwards,
+blink 0.8s infinite;
+}
+
+@keyframes typing{
+from{
+width:0;
+}
+to{
+width:100%;
+}
+}
+
+@keyframes blink{
+50%{
+border-color:transparent;
+}
+}
 </style>
 
 </head>
@@ -89,7 +172,7 @@ box-shadow:0 0 60px rgba(0,140,255,0.9);
 <body>
 
 <div class="hero">
-    <h1>Khalid Mohamed</h1>
+    <h1 class="typing">Khalid Mohamed</h1>
     <p>Performance Media Buyer</p>
     <p>I help brands turn ad spend into real sales 🚀</p>
     <a href="https://api.whatsapp.com/send?phone=201022517124" class="btn">Work With Me</a>
