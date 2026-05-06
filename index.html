@@ -265,6 +265,29 @@ transition:0.3s ease;
 transform:scale(1.1);
 box-shadow:0 0 35px rgba(0,200,83,0.9);
 }
+.floating-insta{
+position:fixed;
+bottom:95px;
+right:25px;
+width:60px;
+height:60px;
+background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+text-decoration:none;
+color:white;
+box-shadow:0 0 25px rgba(220,39,67,0.6);
+z-index:9999;
+transition:0.3s ease;
+}
+
+.floating-insta:hover{
+transform:scale(1.1);
+box-shadow:0 0 35px rgba(220,39,67,0.9);
+}
 </style>
 
 </head>
@@ -409,6 +432,9 @@ observer.observe(el);
 <h2>Contact Me</h2>
 <p style="color:#aaa;">WhatsApp: +201022517124</p>
 </div>
+<a href="https://www.instagram.com/khalid_m3geztoo?igsh=dHhkaHdjcXlpajBr&utm_source=qr" class="floating-insta" target="_blank">
+<i class="fab fa-instagram"></i>
+</a>
 <a href="https://wa.me/201022517124" class="floating-wa"><i class="fab fa-whatsapp"></i></a>
 </body>
 </html>
