@@ -242,6 +242,29 @@ transition:all 1s ease;
 opacity:1;
 transform:translateY(0);
 }
+.floating-wa{
+position:fixed;
+bottom:25px;
+right:25px;
+width:60px;
+height:60px;
+background:#00c853;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:30px;
+text-decoration:none;
+color:white;
+box-shadow:0 0 25px rgba(0,200,83,0.6);
+z-index:9999;
+transition:0.3s ease;
+}
+
+.floating-wa:hover{
+transform:scale(1.1);
+box-shadow:0 0 35px rgba(0,200,83,0.9);
+}
 </style>
 
 </head>
@@ -386,5 +409,6 @@ observer.observe(el);
 <h2>Contact Me</h2>
 <p style="color:#aaa;">WhatsApp: +201022517124</p>
 </div>
+<a href="https://wa.me/201022517124" class="floating-wa">💬</a>
 </body>
 </html>
