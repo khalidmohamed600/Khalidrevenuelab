@@ -160,13 +160,15 @@ transition:0.4s ease;
 }
 
 .card:hover{
-transform:translateY(-12px) scale(1.04);
-box-shadow:0 0 35px rgba(0,170,255,0.35);
-background:rgba(255,255,255,0.12);
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 0 40px rgba(0,170,255,0.25);
+border:1px solid rgba(0,170,255,0.4);
 }
 
 .section{
-animation:fadeUp 1s ease;
+opacity:0;
+transform:translateY(40px);
+animation:fadeUp 1s ease forwards;
 }
 
 @keyframes fadeUp{
@@ -201,12 +203,42 @@ to{
 transform:translateY(-40px);
 }
 }
+.navbar{
+position:fixed;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+display:flex;
+gap:25px;
+padding:12px 25px;
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.1);
+backdrop-filter:blur(10px);
+border-radius:20px;
+z-index:1000;
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+font-size:14px;
+transition:0.3s ease;
+}
+
+.navbar a:hover{
+color:#00aaff;
+}
 </style>
 
 </head>
 
 <body>
-
+<div class="navbar">
+<a href="#">Home</a>
+<a href="#">Services</a>
+<a href="#">Case Study</a>
+<a href="#">Contact</a>
+</div>
 <div class="hero">
     <h1>Khalid Mohamed</h1>
     <p>Performance Media Buyer</p>
