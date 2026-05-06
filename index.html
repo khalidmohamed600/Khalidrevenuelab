@@ -228,6 +228,20 @@ transition:0.3s ease;
 .navbar a:hover{
 color:#00aaff;
 }
+html{
+scroll-behavior:smooth;
+}
+
+.hidden{
+opacity:0;
+transform:translateY(40px);
+transition:all 1s ease;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
 </style>
 
 </head>
@@ -352,5 +366,21 @@ color:#00aaff;
 </div>
 </section>
 <div class="particles"></div>
+<script>
+const observer = new IntersectionObserver((entries)=>{
+entries.forEach((entry)=>{
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+const hiddenElements = document.querySelectorAll(".section");
+
+hiddenElements.forEach((el)=>{
+el.classList.add("hidden");
+observer.observe(el);
+});
+</script>
 </body>
 </html>
