@@ -71,6 +71,15 @@ h1, h2 {
     margin-top: 60px;
     color: #777;
 }
+stat-card{
+transition:0.3s ease;
+cursor:pointer;
+}
+
+.stat-card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px rgba(255,255,255,0.15);
+}    
 </style>
 
 </head>
@@ -167,22 +176,22 @@ h1, h2 {
   
   <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:40px;">
 
-<div style="background:#111; padding:25px; width:220px; border-radius:15px; text-align:center; box-shadow:0 0 15px rgba(255,255,255,0.05);">
+<div class="stat-card" style="background:#111; padding:25px; width:220px; border-radius:15px; text-align:center; box-shadow:0 0 15px rgba(255,255,255,0.05);">
 <h2 style="font-size:38px; margin:0;">59+</h2>
 <p style="color:#bbb;">Qualified Messages</p>
 </div>
 
-<div style="background:#111; padding:25px; width:220px; border-radius:15px; text-align:center; box-shadow:0 0 15px rgba(255,255,255,0.05);">
+<div class="stat-card" style="background:#111; padding:25px; width:220px; border-radius:15px; text-align:center; box-shadow:0 0 15px rgba(255,255,255,0.05);">
 <h2 style="font-size:38px; margin:0;">7.5 EGP</h2>
 <p style="color:#bbb;">Cost Per Message</p>
 </div>
 
-<div style="background:#111; padding:25px; width:220px; border-radius:15px; text-align:center; box-shadow:0 0 15px rgba(255,255,255,0.05);">
+<div class="stat-card" style="background:#111; padding:25px; width:220px; border-radius:15px; text-align:center; box-shadow:0 0 15px rgba(255,255,255,0.05);">
 <h2 style="font-size:38px; margin:0;">5.4%</h2>
 <p style="color:#bbb;">CTR</p>
 </div>
 
-<div style="background:#111; padding:25px; width:220px; border-radius:15px; text-align:center; box-shadow:0 0 15px rgba(255,255,255,0.05);">
+<div class="stat-card" style="background:#111; padding:25px; width:220px; border-radius:15px; text-align:center; box-shadow:0 0 15px rgba(255,255,255,0.05);">
 <h2 style="font-size:38px; margin:0;">447 EGP</h2>
 <p style="color:#bbb;">Total Spend</p>
 </div>
