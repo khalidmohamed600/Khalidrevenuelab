@@ -280,6 +280,116 @@ a{
 }
 
 /* =========================
+   WHY CHOOSE
+========================= */
+
+.why-section{
+    padding:80px 0;
+    background:#080e1c;
+    position:relative;
+    z-index:2;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.why-card{
+    padding:30px 22px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(0,170,255,.12);
+    border-radius:18px;
+    text-align:center;
+    transition:.4s ease;
+}
+
+.why-card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(0,170,255,.5);
+    box-shadow:0 0 30px rgba(0,170,255,.15);
+}
+
+.why-icon{
+    width:55px;
+    height:55px;
+    margin:0 auto 18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:rgba(0,170,255,.1);
+    color:#00aaff;
+    font-size:24px;
+}
+
+.why-card h3{
+    margin-bottom:10px;
+}
+
+.why-card p{
+    color:#999;
+    font-size:14px;
+    line-height:1.7;
+}
+
+/* =========================
+   TRUST BAR
+========================= */
+
+.trust-section{
+    padding:35px 20px;
+    background:#050816;
+    border-top:1px solid rgba(255,255,255,.06);
+    border-bottom:1px solid rgba(255,255,255,.06);
+    position:relative;
+    z-index:2;
+}
+
+.trust-title{
+    text-align:center;
+    color:#666;
+    font-size:11px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:25px;
+}
+
+.trust-bar{
+    max-width:1000px;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.trust-item{
+    padding:13px 20px;
+    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.03);
+    border-radius:30px;
+    color:#aaa;
+    font-size:13px;
+    display:flex;
+    align-items:center;
+    gap:9px;
+    transition:.3s ease;
+}
+
+.trust-item i{
+    color:#00aaff;
+}
+
+.trust-item:hover{
+    color:white;
+    border-color:rgba(0,170,255,.35);
+    transform:translateY(-3px);
+}
+
+/* =========================
    SERVICES
 ========================= */
 
@@ -353,43 +463,60 @@ a{
    PROCESS
 ========================= */
 
-.process-card{
-    width:260px;
-    padding:28px;
-    background:#0c1222;
-    border:1px solid rgba(0,170,255,.15);
-    border-radius:18px;
-    text-align:center;
-    transition:.3s ease;
+.process-section{
+    padding:90px 0;
+    background:#080e1c;
+    position:relative;
+    z-index:2;
 }
 
-.process-card:hover{
+.process-grid-new{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    max-width:950px;
+    margin:auto;
+}
+
+.process-card-new{
+    padding:35px 25px;
+    background:#0f172a;
+    border:1px solid rgba(0,170,255,.12);
+    border-radius:20px;
+    text-align:center;
+    transition:.4s ease;
+    position:relative;
+}
+
+.process-card-new:hover{
     transform:translateY(-8px);
-    border-color:rgba(0,170,255,.45);
+    border-color:rgba(0,170,255,.5);
     box-shadow:0 0 30px rgba(0,170,255,.12);
 }
 
-.process-number{
-    width:45px;
-    height:45px;
+.process-number-new{
+    width:52px;
+    height:52px;
+    margin:0 auto 20px;
+    border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
-    margin:0 auto 18px;
-    border-radius:50%;
-    background:rgba(0,170,255,.12);
+    background:rgba(0,170,255,.1);
     color:#00aaff;
+    font-size:16px;
     font-weight:bold;
 }
 
-.process-card h3{
-    margin-bottom:10px;
+.process-card-new h3{
+    font-size:20px;
+    margin-bottom:12px;
 }
 
-.process-card p{
+.process-card-new p{
     color:#999;
     font-size:14px;
-    line-height:1.6;
+    line-height:1.7;
 }
 
 /* =========================
@@ -562,6 +689,7 @@ a{
     font-size:30px;
     font-weight:800;
     margin-bottom:8px;
+    color:#fff;
 }
 
 .result-label{
@@ -813,13 +941,31 @@ a{
         grid-template-columns:1fr;
     }
 
+    .why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .process-grid-new{
+        grid-template-columns:1fr;
+        max-width:340px;
+    }
+
     .card,
-    .process-card,
     .result-card,
     .skill-card,
     .expect-card{
         width:100%;
         max-width:340px;
+    }
+
+    .trust-bar{
+        gap:10px;
+    }
+
+    .trust-item{
+        width:100%;
+        max-width:300px;
+        justify-content:center;
     }
 
     .cta h2{
@@ -898,15 +1044,138 @@ a{
             <a href="https://wa.me/201022517124"
                class="btn btn-primary"
                target="_blank">
+
                 <i class="fab fa-whatsapp"></i>
                 Work With Me
+
             </a>
 
             <a href="#case-study-details"
                class="btn btn-secondary">
+
                 View Case Study
+
             </a>
 
+        </div>
+
+    </div>
+
+</section>
+
+<!-- WHY CHOOSE -->
+
+<section class="why-section">
+
+<div class="container">
+
+    <h2 class="section-title">
+        Why Choose Khalid Revenue Lab?
+    </h2>
+
+    <div class="section-line"></div>
+
+    <p class="section-subtitle">
+        A performance-first approach focused on finding what works,
+        improving efficiency and building scalable growth systems.
+    </p>
+
+    <div class="why-grid">
+
+        <div class="why-card">
+
+            <div class="why-icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
+
+            <h3>Data Driven</h3>
+
+            <p>
+                Campaign decisions are based on real performance data
+                and measurable signals.
+            </p>
+
+        </div>
+
+        <div class="why-card">
+
+            <div class="why-icon">
+                <i class="fas fa-flask"></i>
+            </div>
+
+            <h3>Testing Mindset</h3>
+
+            <p>
+                Different creatives, audiences and angles are tested
+                to discover stronger opportunities.
+            </p>
+
+        </div>
+
+        <div class="why-card">
+
+            <div class="why-icon">
+                <i class="fas fa-bullseye"></i>
+            </div>
+
+            <h3>Performance Focused</h3>
+
+            <p>
+                The focus stays on meaningful campaign outcomes,
+                not vanity metrics alone.
+            </p>
+
+        </div>
+
+        <div class="why-card">
+
+            <div class="why-icon">
+                <i class="fas fa-arrow-trend-up"></i>
+            </div>
+
+            <h3>Built To Scale</h3>
+
+            <p>
+                Winning combinations are identified, optimized and
+                prepared for controlled scaling.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- TRUST BAR -->
+
+<section class="trust-section">
+
+    <div class="trust-title">
+        Performance Marketing Expertise
+    </div>
+
+    <div class="trust-bar">
+
+        <div class="trust-item">
+            <i class="fab fa-meta"></i>
+            Meta Ads
+        </div>
+
+        <div class="trust-item">
+            <i class="fab fa-google"></i>
+            Google Ads
+        </div>
+
+        <div class="trust-item">
+            <i class="fab fa-tiktok"></i>
+            TikTok Ads
+        </div>
+
+        <div class="trust-item">
+            <i class="fas fa-cart-shopping"></i>
+            E-commerce Growth
         </div>
 
     </div>
@@ -933,6 +1202,7 @@ a{
     <div class="services">
 
         <div class="card">
+
             <div class="card-icon">
                 <i class="fab fa-facebook"></i>
             </div>
@@ -943,9 +1213,11 @@ a{
                 Campaign strategy, creative testing, audience targeting,
                 retargeting and performance optimization.
             </p>
+
         </div>
 
         <div class="card">
+
             <div class="card-icon">
                 <i class="fab fa-tiktok"></i>
             </div>
@@ -956,9 +1228,11 @@ a{
                 Performance campaigns focused on discovering winning
                 creatives, audiences and scalable acquisition opportunities.
             </p>
+
         </div>
 
         <div class="card">
+
             <div class="card-icon">
                 <i class="fab fa-google"></i>
             </div>
@@ -969,9 +1243,11 @@ a{
                 Search-focused campaigns built around high-intent traffic,
                 keyword targeting and conversion-focused optimization.
             </p>
+
         </div>
 
         <div class="card">
+
             <div class="card-icon">
                 <i class="fas fa-chart-line"></i>
             </div>
@@ -982,6 +1258,7 @@ a{
                 Data-driven testing and optimization using CTR, CPC,
                 CPM, Cost Per Result and campaign performance signals.
             </p>
+
         </div>
 
     </div>
@@ -1018,69 +1295,66 @@ a{
 
 </section>
 
-<!-- HOW I WORK -->
+<!-- HOW WE TURN AD SPEND INTO REVENUE -->
 
-<section class="section">
+<section class="process-section">
 
 <div class="container">
 
     <h2 class="section-title">
-        How I Work
+        How We Turn Ad Spend Into Revenue
     </h2>
 
     <div class="section-line"></div>
 
     <p class="section-subtitle">
-        A simple performance-focused process from campaign setup
-        to optimization and scaling.
+        A simple performance system built around launching,
+        optimizing and scaling what works.
     </p>
 
-    <div class="process-grid">
+    <div class="process-grid-new">
 
-        <div class="process-card">
+        <div class="process-card-new">
 
-            <div class="process-number">01</div>
-
-            <h3>Research</h3>
-
-            <p>
-                Understand the product, market, audience and campaign objective.
-            </p>
-
-        </div>
-
-        <div class="process-card">
-
-            <div class="process-number">02</div>
+            <div class="process-number-new">
+                01
+            </div>
 
             <h3>Launch</h3>
 
             <p>
-                Build structured campaigns with multiple creative and audience angles.
+                Build structured campaigns, test creative angles
+                and launch multiple audience opportunities.
             </p>
 
         </div>
 
-        <div class="process-card">
+        <div class="process-card-new">
 
-            <div class="process-number">03</div>
+            <div class="process-number-new">
+                02
+            </div>
 
             <h3>Optimize</h3>
 
             <p>
-                Analyze performance data and continuously improve campaign efficiency.
+                Analyze performance data, identify winning combinations
+                and continuously improve campaign efficiency.
             </p>
 
         </div>
 
-        <div class="process-card">
+        <div class="process-card-new">
 
-            <div class="process-number">04</div>
+            <div class="process-number-new">
+                03
+            </div>
 
             <h3>Scale</h3>
 
             <p>
-                Increase investment in winning combinations while protecting performance.
+                Increase investment in proven winners while maintaining
+                control over efficiency and performance.
             </p>
 
         </div>
@@ -1111,39 +1385,75 @@ a{
     <div class="skills-grid">
 
         <div class="skill-card">
+
             <i class="fab fa-meta"></i>
+
             <h3>Meta Ads</h3>
-            <p>Campaign setup, targeting, retargeting and optimization.</p>
+
+            <p>
+                Campaign setup, targeting, retargeting and optimization.
+            </p>
+
         </div>
 
         <div class="skill-card">
+
             <i class="fab fa-google"></i>
+
             <h3>Google Ads</h3>
-            <p>Search campaigns, keywords and performance optimization.</p>
+
+            <p>
+                Search campaigns, keywords and performance optimization.
+            </p>
+
         </div>
 
         <div class="skill-card">
+
             <i class="fab fa-tiktok"></i>
+
             <h3>TikTok Ads</h3>
-            <p>Creative testing, audience discovery and acquisition.</p>
+
+            <p>
+                Creative testing, audience discovery and acquisition.
+            </p>
+
         </div>
 
         <div class="skill-card">
+
             <i class="fas fa-bullseye"></i>
+
             <h3>Audience Targeting</h3>
-            <p>Audience research, segmentation and retargeting strategies.</p>
+
+            <p>
+                Audience research, segmentation and retargeting strategies.
+            </p>
+
         </div>
 
         <div class="skill-card">
+
             <i class="fas fa-flask"></i>
+
             <h3>A/B Testing</h3>
-            <p>Testing creatives, audiences and campaign variables.</p>
+
+            <p>
+                Testing creatives, audiences and campaign variables.
+            </p>
+
         </div>
 
         <div class="skill-card">
+
             <i class="fas fa-chart-column"></i>
+
             <h3>Data Analysis</h3>
-            <p>CTR, CPC, CPM, Cost Per Result and performance analysis.</p>
+
+            <p>
+                CTR, CPC, CPM, Cost Per Result and performance analysis.
+            </p>
+
         </div>
 
     </div>
@@ -1167,43 +1477,59 @@ a{
     <div class="industries">
 
         <div class="card">
+
             <div class="card-icon">
                 <i class="fas fa-shirt"></i>
             </div>
+
             <h3>Fashion & Apparel</h3>
+
             <p>
                 Paid campaigns for fashion brands and product-based businesses.
             </p>
+
         </div>
 
         <div class="card">
+
             <div class="card-icon">
                 <i class="fas fa-clock"></i>
             </div>
+
             <h3>Watches & Accessories</h3>
+
             <p>
                 Performance campaigns designed around product demand and creative angles.
             </p>
+
         </div>
 
         <div class="card">
+
             <div class="card-icon">
                 <i class="fas fa-cart-shopping"></i>
             </div>
+
             <h3>E-commerce & DTC</h3>
+
             <p>
                 Acquisition-focused campaigns for online stores and direct-to-consumer brands.
             </p>
+
         </div>
 
         <div class="card">
+
             <div class="card-icon">
                 <i class="fas fa-lightbulb"></i>
             </div>
+
             <h3>Creative Products</h3>
+
             <p>
                 Campaign testing focused on finding strong product and creative combinations.
             </p>
+
         </div>
 
     </div>
@@ -1320,23 +1646,58 @@ a{
     <div class="results">
 
         <div class="result-card">
-            <div class="result-number">59+</div>
-            <div class="result-label">Qualified Messages</div>
+
+            <div class="result-number counter"
+                 data-target="59"
+                 data-suffix="+">
+                0
+            </div>
+
+            <div class="result-label">
+                Qualified Messages
+            </div>
+
         </div>
 
         <div class="result-card">
-            <div class="result-number">7.5 EGP</div>
-            <div class="result-label">Cost Per Message</div>
+
+            <div class="result-number counter"
+                 data-target="7.5"
+                 data-suffix=" EGP"
+                 data-decimals="1">
+                0
+            </div>
+
+            <div class="result-label">
+                Cost Per Message
+            </div>
+
         </div>
 
         <div class="result-card">
-            <div class="result-number">447 EGP</div>
-            <div class="result-label">Total Ad Spend</div>
+
+            <div class="result-number counter"
+                 data-target="447"
+                 data-suffix=" EGP">
+                0
+            </div>
+
+            <div class="result-label">
+                Total Ad Spend
+            </div>
+
         </div>
 
         <div class="result-card">
-            <div class="result-number">Strong</div>
-            <div class="result-label">CTR & Engagement</div>
+
+            <div class="result-number">
+                Strong
+            </div>
+
+            <div class="result-label">
+                CTR & Engagement
+            </div>
+
         </div>
 
     </div>
@@ -1421,39 +1782,55 @@ a{
     <div class="expect-grid">
 
         <div class="expect-card">
+
             <i class="fas fa-chart-line"></i>
+
             <h3>Performance Focus</h3>
+
             <p>
                 Campaign decisions based on measurable performance data
                 rather than assumptions.
             </p>
+
         </div>
 
         <div class="expect-card">
+
             <i class="fas fa-flask"></i>
+
             <h3>Continuous Testing</h3>
+
             <p>
                 Testing creatives, audiences and campaign variables
                 to identify stronger opportunities.
             </p>
+
         </div>
 
         <div class="expect-card">
+
             <i class="fas fa-bullseye"></i>
+
             <h3>Clear Strategy</h3>
+
             <p>
                 Structured campaign planning aligned with the business
                 objective and customer journey.
             </p>
+
         </div>
 
         <div class="expect-card">
+
             <i class="fas fa-arrow-trend-up"></i>
+
             <h3>Optimization & Scaling</h3>
+
             <p>
                 Focus on improving efficiency and scaling combinations
                 that demonstrate strong performance.
             </p>
+
         </div>
 
     </div>
@@ -1563,6 +1940,74 @@ window.addEventListener("load",function(){
         document.getElementById("loader").style.visibility="hidden";
 
     },1500);
+
+});
+
+
+/* =========================
+   ANIMATED COUNTERS
+========================= */
+
+const counters = document.querySelectorAll(".counter");
+
+const counterObserver = new IntersectionObserver((entries, observer) => {
+
+    entries.forEach(entry => {
+
+        if(!entry.isIntersecting) return;
+
+        const counter = entry.target;
+
+        const target = parseFloat(counter.dataset.target);
+        const suffix = counter.dataset.suffix || "";
+        const decimals = parseInt(counter.dataset.decimals || "0");
+
+        let start = 0;
+        const duration = 1800;
+        const startTime = performance.now();
+
+        function updateCounter(currentTime){
+
+            const progress = Math.min(
+                (currentTime - startTime) / duration,
+                1
+            );
+
+            const easedProgress =
+                1 - Math.pow(1 - progress, 3);
+
+            const currentValue =
+                start + (target - start) * easedProgress;
+
+            counter.textContent =
+                currentValue.toFixed(decimals) + suffix;
+
+            if(progress < 1){
+
+                requestAnimationFrame(updateCounter);
+
+            }else{
+
+                counter.textContent =
+                    target.toFixed(decimals) + suffix;
+
+            }
+
+        }
+
+        requestAnimationFrame(updateCounter);
+
+        observer.unobserve(counter);
+
+    });
+
+},{
+    threshold:0.5
+});
+
+counters.forEach(counter => {
+
+    counterObserver.observe(counter);
 
 });
 
