@@ -86,10 +86,19 @@ background:rgba(255,255,255,0.18);
 
 .card {
     background: #1a1a1a;
-    padding: 20px;
+    padding: 25px;
     width: 250px;
-    border-radius: 10px;
+    border-radius: 15px;
     text-align: center;
+    border: 1px solid rgba(0,170,255,0.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0,170,255,0.45);
+    box-shadow: 0 15px 35px rgba(0,170,255,0.12);
 }
 
 .footer {
@@ -97,11 +106,23 @@ background:rgba(255,255,255,0.18);
     margin-top: 60px;
     color: #777;
 }
-.stat-card{
-background:#151515;
-border:1px solid rgba(0,140,255,0.3);
-transition:0.3s ease;
-cursor:pointer;
+
+.stat-card {
+    background: #151515;
+    border: 1px solid rgba(0,140,255,0.3);
+    padding: 25px;
+    width: 220px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+.stat-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(0,170,255,0.6);
+    box-shadow: 0 15px 35px rgba(0,170,255,0.18);
 }
 
 .stat-card:hover{
@@ -424,13 +445,32 @@ to{transform:translateY(-15px);}
   </p>
 
   <div style="margin-top:30px;">
-    <h3 style="margin-bottom:10px;">Results</h3>
-    
-    <p>✔️ 59+ Qualified Messages</p>
-    <p>✔️ Cost per message: 7.5 EGP (~$0.15)</p>
-    <p>✔️ Total spent: 447 EGP (~$9.3)</p>
-    <p>✔️ High CTR & strong engagement</p>
-  </div>
+<h3 style="margin-bottom:20px;">Results</h3>
+
+<div style="display:flex; flex-wrap:wrap; justify-content:center; gap:15px;">
+
+<div style="background:#111; padding:22px; width:210px; border-radius:15px; text-align:center; box-shadow:0 0 15px rgba(0,170,255,0.12);">
+<h3 style="font-size:30px; margin:0;">59+</h3>
+<p style="color:#bbb;">Qualified Messages</p>
+</div>
+
+<div style="background:#111; padding:22px; width:210px; border-radius:15px; text-align:center; box-shadow:0 0 15px rgba(0,170,255,0.12);">
+<h3 style="font-size:30px; margin:0;">7.5 EGP</h3>
+<p style="color:#bbb;">Cost Per Message</p>
+</div>
+
+<div style="background:#111; padding:22px; width:210px; border-radius:15px; text-align:center; box-shadow:0 0 15px rgba(0,170,255,0.12);">
+<h3 style="font-size:30px; margin:0;">447 EGP</h3>
+<p style="color:#bbb;">Total Ad Spend</p>
+</div>
+
+<div style="background:#111; padding:22px; width:210px; border-radius:15px; text-align:center; box-shadow:0 0 15px rgba(0,170,255,0.12);">
+<h3 style="font-size:30px; margin:0;">Strong</h3>
+<p style="color:#bbb;">CTR & Engagement</p>
+</div>
+
+</div>
+</div>
 
   <div style="margin-top:30px;">
     <h3 style="margin-bottom:10px;">Strategy</h3>
