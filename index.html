@@ -23,7 +23,7 @@ html{
 }
 
 body{
-    font-family:Arial, sans-serif;
+    font-family:Arial,sans-serif;
     background:#050816;
     color:white;
     overflow-x:hidden;
@@ -46,7 +46,7 @@ a{
     align-items:center;
     flex-direction:column;
     z-index:10000;
-    transition:0.8s ease;
+    transition:.8s ease;
 }
 
 .loader-text{
@@ -63,7 +63,7 @@ a{
     background:#00aaff;
     border-radius:50%;
     margin-top:20px;
-    animation:bounce 0.8s infinite alternate;
+    animation:bounce .8s infinite alternate;
 }
 
 @keyframes pulse{
@@ -85,7 +85,7 @@ a{
     inset:0;
     pointer-events:none;
     background-image:
-    radial-gradient(#00aaff 1px, transparent 1px);
+    radial-gradient(#00aaff 1px,transparent 1px);
     background-size:40px 40px;
     opacity:.05;
     animation:particlesMove 20s linear infinite;
@@ -107,7 +107,7 @@ a{
     left:50%;
     transform:translateX(-50%);
     display:flex;
-    gap:28px;
+    gap:25px;
     padding:13px 25px;
     background:rgba(255,255,255,.08);
     border:1px solid rgba(255,255,255,.12);
@@ -142,9 +142,8 @@ a{
     padding:140px 20px 100px;
     position:relative;
     overflow:hidden;
-
     background:
-    radial-gradient(circle at top, rgba(0,170,255,.25), transparent 40%),
+    radial-gradient(circle at top,rgba(0,170,255,.25),transparent 40%),
     linear-gradient(to bottom,#050816,#0b1020);
 }
 
@@ -171,7 +170,6 @@ a{
     text-transform:uppercase;
     letter-spacing:3px;
     margin-bottom:18px;
-
     text-shadow:
     0 0 10px rgba(0,170,255,.55),
     0 0 30px rgba(0,170,255,.25);
@@ -213,11 +211,13 @@ a{
     text-decoration:none;
     font-weight:bold;
     transition:.3s ease;
+    cursor:pointer;
 }
 
 .btn-primary{
     background:#0099ff;
     color:white;
+    border:none;
     box-shadow:0 0 25px rgba(0,153,255,.45);
 }
 
@@ -253,6 +253,8 @@ a{
 
 .section{
     padding:90px 0;
+    position:relative;
+    z-index:2;
 }
 
 .section-title{
@@ -284,7 +286,9 @@ a{
 .services,
 .projects,
 .industries,
-.process-grid{
+.process-grid,
+.skills-grid,
+.expect-grid{
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
@@ -356,6 +360,13 @@ a{
     border:1px solid rgba(0,170,255,.15);
     border-radius:18px;
     text-align:center;
+    transition:.3s ease;
+}
+
+.process-card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(0,170,255,.45);
+    box-shadow:0 0 30px rgba(0,170,255,.12);
 }
 
 .process-number{
@@ -379,6 +390,106 @@ a{
     color:#999;
     font-size:14px;
     line-height:1.6;
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.skill-card{
+    width:210px;
+    padding:24px 18px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(0,170,255,.12);
+    border-radius:16px;
+    text-align:center;
+    transition:.3s ease;
+}
+
+.skill-card:hover{
+    transform:translateY(-7px);
+    border-color:rgba(0,170,255,.5);
+    box-shadow:0 0 25px rgba(0,170,255,.12);
+}
+
+.skill-card i{
+    color:#00aaff;
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.skill-card h3{
+    font-size:16px;
+    margin-bottom:8px;
+}
+
+.skill-card p{
+    color:#999;
+    font-size:13px;
+    line-height:1.5;
+}
+
+/* =========================
+   CAMPAIGN WORK
+========================= */
+
+.campaign-section{
+    padding:90px 20px;
+    background:#080e1c;
+    position:relative;
+    z-index:2;
+}
+
+.campaign-container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.campaign-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.campaign-card{
+    padding:28px;
+    background:#0f172a;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    transition:.3s ease;
+}
+
+.campaign-card:hover{
+    transform:translateY(-7px);
+    border-color:rgba(0,170,255,.45);
+    box-shadow:0 0 30px rgba(0,170,255,.12);
+}
+
+.campaign-icon{
+    font-size:30px;
+    color:#00aaff;
+    margin-bottom:18px;
+}
+
+.campaign-card h3{
+    margin-bottom:12px;
+}
+
+.campaign-card p{
+    color:#aaa;
+    line-height:1.7;
+    font-size:14px;
+}
+
+.campaign-tag{
+    display:inline-block;
+    margin-top:18px;
+    padding:6px 10px;
+    border-radius:20px;
+    background:rgba(0,170,255,.08);
+    color:#8ddcff;
+    font-size:11px;
+    border:1px solid rgba(0,170,255,.2);
 }
 
 /* =========================
@@ -504,6 +615,42 @@ a{
 }
 
 /* =========================
+   WHAT CLIENTS GET
+========================= */
+
+.expect-card{
+    width:250px;
+    padding:28px 22px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.1);
+    border-radius:18px;
+    text-align:center;
+    transition:.3s ease;
+}
+
+.expect-card:hover{
+    transform:translateY(-7px);
+    border-color:rgba(0,170,255,.45);
+    box-shadow:0 0 30px rgba(0,170,255,.12);
+}
+
+.expect-card i{
+    color:#00aaff;
+    font-size:30px;
+    margin-bottom:18px;
+}
+
+.expect-card h3{
+    margin-bottom:10px;
+}
+
+.expect-card p{
+    color:#aaa;
+    line-height:1.6;
+    font-size:14px;
+}
+
+/* =========================
    CTA
 ========================= */
 
@@ -513,7 +660,7 @@ a{
     position:relative;
     z-index:2;
     background:
-    radial-gradient(circle at center, rgba(0,170,255,.12), transparent 55%);
+    radial-gradient(circle at center,rgba(0,170,255,.12),transparent 55%);
 }
 
 .cta h2{
@@ -618,14 +765,15 @@ a{
 
     .navbar{
         top:12px;
-        gap:12px;
-        padding:10px 14px;
+        gap:10px;
+        padding:10px 12px;
         width:auto;
-        max-width:94%;
+        max-width:96%;
+        overflow-x:auto;
     }
 
     .navbar a{
-        font-size:11px;
+        font-size:10px;
     }
 
     .hero{
@@ -661,9 +809,15 @@ a{
         grid-template-columns:1fr;
     }
 
+    .campaign-grid{
+        grid-template-columns:1fr;
+    }
+
     .card,
     .process-card,
-    .result-card{
+    .result-card,
+    .skill-card,
+    .expect-card{
         width:100%;
         max-width:340px;
     }
@@ -710,6 +864,7 @@ a{
     <a href="#home">Home</a>
     <a href="#services">Services</a>
     <a href="#about">About</a>
+    <a href="#skills">Skills</a>
     <a href="#case-study-details">Case Study</a>
     <a href="#contact">Contact</a>
 </div>
@@ -936,6 +1091,67 @@ a{
 
 </section>
 
+<!-- SKILLS -->
+
+<section class="section" id="skills">
+
+<div class="container">
+
+    <h2 class="section-title">
+        Skills & Tools
+    </h2>
+
+    <div class="section-line"></div>
+
+    <p class="section-subtitle">
+        Core performance marketing skills and platforms I use
+        to build, analyze and optimize paid advertising campaigns.
+    </p>
+
+    <div class="skills-grid">
+
+        <div class="skill-card">
+            <i class="fab fa-meta"></i>
+            <h3>Meta Ads</h3>
+            <p>Campaign setup, targeting, retargeting and optimization.</p>
+        </div>
+
+        <div class="skill-card">
+            <i class="fab fa-google"></i>
+            <h3>Google Ads</h3>
+            <p>Search campaigns, keywords and performance optimization.</p>
+        </div>
+
+        <div class="skill-card">
+            <i class="fab fa-tiktok"></i>
+            <h3>TikTok Ads</h3>
+            <p>Creative testing, audience discovery and acquisition.</p>
+        </div>
+
+        <div class="skill-card">
+            <i class="fas fa-bullseye"></i>
+            <h3>Audience Targeting</h3>
+            <p>Audience research, segmentation and retargeting strategies.</p>
+        </div>
+
+        <div class="skill-card">
+            <i class="fas fa-flask"></i>
+            <h3>A/B Testing</h3>
+            <p>Testing creatives, audiences and campaign variables.</p>
+        </div>
+
+        <div class="skill-card">
+            <i class="fas fa-chart-column"></i>
+            <h3>Data Analysis</h3>
+            <p>CTR, CPC, CPM, Cost Per Result and performance analysis.</p>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
 <!-- INDUSTRIES -->
 
 <section class="section">
@@ -996,6 +1212,88 @@ a{
 
 </section>
 
+<!-- CAMPAIGN WORK -->
+
+<section class="campaign-section">
+
+<div class="campaign-container">
+
+    <h2 class="section-title">
+        Selected Campaign Work
+    </h2>
+
+    <div class="section-line"></div>
+
+    <p class="section-subtitle">
+        Examples of performance marketing work and campaign
+        approaches across different product categories.
+    </p>
+
+    <div class="campaign-grid">
+
+        <div class="campaign-card">
+
+            <div class="campaign-icon">
+                <i class="fas fa-shirt"></i>
+            </div>
+
+            <h3>Women's Fashion</h3>
+
+            <p>
+                Meta messaging campaign focused on creative testing,
+                audience optimization and qualified message generation.
+            </p>
+
+            <span class="campaign-tag">
+                Meta Ads
+            </span>
+
+        </div>
+
+        <div class="campaign-card">
+
+            <div class="campaign-icon">
+                <i class="fas fa-shoe-prints"></i>
+            </div>
+
+            <h3>Men's Footwear</h3>
+
+            <p>
+                E-commerce acquisition approach focused on product
+                positioning, audience testing and conversion optimization.
+            </p>
+
+            <span class="campaign-tag">
+                E-commerce
+            </span>
+
+        </div>
+
+        <div class="campaign-card">
+
+            <div class="campaign-icon">
+                <i class="fas fa-bag-shopping"></i>
+            </div>
+
+            <h3>Accessories & Bags</h3>
+
+            <p>
+                Product-focused campaign strategy built around creative
+                angles, audience testing and performance optimization.
+            </p>
+
+            <span class="campaign-tag">
+                Performance Marketing
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
 <!-- CASE STUDY -->
 
 <section class="case-study" id="case-study-details">
@@ -1019,61 +1317,29 @@ a{
 
     </p>
 
-    <!-- RESULTS -->
-
     <div class="results">
 
         <div class="result-card">
-
-            <div class="result-number">
-                59+
-            </div>
-
-            <div class="result-label">
-                Qualified Messages
-            </div>
-
+            <div class="result-number">59+</div>
+            <div class="result-label">Qualified Messages</div>
         </div>
 
         <div class="result-card">
-
-            <div class="result-number">
-                7.5 EGP
-            </div>
-
-            <div class="result-label">
-                Cost Per Message
-            </div>
-
+            <div class="result-number">7.5 EGP</div>
+            <div class="result-label">Cost Per Message</div>
         </div>
 
         <div class="result-card">
-
-            <div class="result-number">
-                447 EGP
-            </div>
-
-            <div class="result-label">
-                Total Ad Spend
-            </div>
-
+            <div class="result-number">447 EGP</div>
+            <div class="result-label">Total Ad Spend</div>
         </div>
 
         <div class="result-card">
-
-            <div class="result-number">
-                Strong
-            </div>
-
-            <div class="result-label">
-                CTR & Engagement
-            </div>
-
+            <div class="result-number">Strong</div>
+            <div class="result-label">CTR & Engagement</div>
         </div>
 
     </div>
-
-    <!-- STRATEGY -->
 
     <div class="case-columns">
 
@@ -1111,7 +1377,7 @@ a{
                 Key Insight
             </h3>
 
-            <p style="color:#bbb; line-height:1.8;">
+            <p style="color:#bbb;line-height:1.8;">
 
                 Strong ad performance with low cost per result.
                 The main improvement opportunity was increasing
@@ -1133,6 +1399,62 @@ a{
         The campaign demonstrated strong efficiency at the message-generation
         level, while highlighting the importance of connecting ad performance
         with the sales process to maximize final business results.
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- WHAT CLIENTS GET -->
+
+<section class="section">
+
+<div class="container">
+
+    <h2 class="section-title">
+        What Clients Can Expect
+    </h2>
+
+    <div class="section-line"></div>
+
+    <div class="expect-grid">
+
+        <div class="expect-card">
+            <i class="fas fa-chart-line"></i>
+            <h3>Performance Focus</h3>
+            <p>
+                Campaign decisions based on measurable performance data
+                rather than assumptions.
+            </p>
+        </div>
+
+        <div class="expect-card">
+            <i class="fas fa-flask"></i>
+            <h3>Continuous Testing</h3>
+            <p>
+                Testing creatives, audiences and campaign variables
+                to identify stronger opportunities.
+            </p>
+        </div>
+
+        <div class="expect-card">
+            <i class="fas fa-bullseye"></i>
+            <h3>Clear Strategy</h3>
+            <p>
+                Structured campaign planning aligned with the business
+                objective and customer journey.
+            </p>
+        </div>
+
+        <div class="expect-card">
+            <i class="fas fa-arrow-trend-up"></i>
+            <h3>Optimization & Scaling</h3>
+            <p>
+                Focus on improving efficiency and scaling combinations
+                that demonstrate strong performance.
+            </p>
+        </div>
 
     </div>
 
@@ -1195,7 +1517,7 @@ a{
 
 <div class="footer">
 
-    © 2026 Khalid Mohamed | Performance Media Buyer
+    ©️ 2026 Khalid Mohamed | Performance Media Buyer
 
 </div>
 
@@ -1233,12 +1555,12 @@ a{
 
 <script>
 
-window.addEventListener("load", function(){
+window.addEventListener("load",function(){
 
     setTimeout(function(){
 
-        document.getElementById("loader").style.opacity = "0";
-        document.getElementById("loader").style.visibility = "hidden";
+        document.getElementById("loader").style.opacity="0";
+        document.getElementById("loader").style.visibility="hidden";
 
     },1500);
 
