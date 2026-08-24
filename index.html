@@ -3,81 +3,149 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Khalid Mohamed | Performance Media Buyer</title>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 <style>
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #0d0d0d;
     color: white;
     overflow-x: hidden;
-    max-width: 100%;
 }
 
-*{
-    box-sizing:border-box;
+h1,
+h2 {
+    text-align: center;
 }
 
 .container {
     width: 90%;
+    max-width: 1200px;
     margin: auto;
     padding: 40px 0;
 }
 
-h1, h2 {
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
     text-align: center;
+    padding: 120px 20px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(0,170,255,0.25),
+            transparent 40%
+        ),
+        linear-gradient(
+            to bottom,
+            #050816,
+            #0b1020
+        );
 }
 
-.hero{
-text-align:center;
-padding:120px 20px;
-position:relative;
-overflow:hidden;
-background:
-radial-gradient(circle at top, rgba(0,170,255,0.25), transparent 40%),
-linear-gradient(to bottom,#050816,#0b1020);
+.hero h1 {
+    margin-bottom: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 48px;
+    letter-spacing: 2px;
+
+    text-shadow:
+        0 0 8px rgba(0,170,255,0.5),
+        0 0 18px rgba(0,170,255,0.25);
 }
 
-.hero h1{
-margin-bottom:10px;
-font-weight:800;
-text-transform:uppercase;
-font-size:48px;
-text-shadow:
-0 0 8px rgba(0,170,255,0.5),
-0 0 18px rgba(0,170,255,0.25);
-letter-spacing:2px;
-}
 .hero p {
-letter-spacing:0.5px;
-line-height:1.6;
-font-size: 20px;
-color: #aaa;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+    font-size: 20px;
+    color: #aaa;
 }
+
+
+/* =========================
+   BUTTON
+========================= */
+
 .btn {
-background:rgba(255,255,255,0.1);
-color:white;
-border:1px solid rgba(255,255,255,0.2);
-backdrop-filter:blur(10px);
-box-shadow:0 0 25px rgba(0,170,255,0.25);
-transition:0.3s ease;
-padding: 12px 25px;
-text-decoration: none;
-margin-top: 20px;
-display: inline-block;
-border-radius: 12px;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 30px;
+
+    border-radius: 12px;
+
+    background: #0099ff;
+    color: white;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.3s ease;
+
+    box-shadow:
+        0 0 20px rgba(0,153,255,0.5);
 }
-.btn:hover{
-transform:translateY(-4px) scale(1.03);
-box-shadow:0 0 35px rgba(0,170,255,0.45);
-background:rgba(255,255,255,0.18);
+
+.btn:hover {
+    transform: translateY(-4px) scale(1.03);
+
+    background: #00bbff;
+
+    box-shadow:
+        0 0 30px rgba(0,170,255,0.7);
 }
+
+
+/* =========================
+   SECTIONS
+========================= */
+
 .section {
     margin-top: 60px;
 }
 
-.services, .projects {
+.hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =========================
+   SERVICES & PROJECTS
+========================= */
+
+.services,
+.projects {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -85,450 +153,922 @@ background:rgba(255,255,255,0.18);
 }
 
 .card {
-    background: #1a1a1a;
-    padding: 25px;
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    backdrop-filter: blur(10px);
+
+    padding: 20px;
+
     width: 250px;
-    border-radius: 15px;
+
+    border-radius: 16px;
+
     text-align: center;
-    border: 1px solid rgba(0,170,255,0.15);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-    transition: 0.3s ease;
+
+    transition: 0.4s ease;
 }
 
 .card:hover {
-    transform: translateY(-6px);
-    border-color: rgba(0,170,255,0.45);
-    box-shadow: 0 15px 35px rgba(0,170,255,0.12);
+    transform: translateY(-10px) scale(1.03);
+
+    box-shadow:
+        0 0 40px rgba(0,170,255,0.25);
+
+    border-color:
+        rgba(0,170,255,0.4);
 }
 
-.footer {
+
+/* =========================
+   CASE STUDY
+========================= */
+
+#case-study-details {
+    position: relative;
+    z-index: 1;
+
+    padding: 60px 20px;
+
     text-align: center;
-    margin-top: 60px;
-    color: #777;
+
+    background: #0f172a;
+
+    color: white;
 }
 
-.stat-card {
-    background: #151515;
-    border: 1px solid rgba(0,140,255,0.3);
-    padding: 25px;
-    width: 220px;
+.case-study-description {
+    max-width: 600px;
+    margin: auto;
+
+    color: #cbd5e1;
+
+    line-height: 1.7;
+}
+
+.results-grid {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+.result-card {
+    background: #111;
+
+    padding: 22px;
+
+    width: 210px;
+
     border-radius: 15px;
+
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+
+    box-shadow:
+        0 0 15px rgba(0,170,255,0.12);
+
     transition: 0.3s ease;
-    cursor: pointer;
 }
 
-.stat-card:hover {
+.result-card:hover {
     transform: translateY(-6px);
-    border-color: rgba(0,170,255,0.6);
-    box-shadow: 0 15px 35px rgba(0,170,255,0.18);
+
+    box-shadow:
+        0 0 25px rgba(0,170,255,0.25);
 }
 
-.stat-card:hover{
-transform:translateY(-12px) scale(1.03);
-box-shadow:0 0 60px rgba(0,140,255,0.9);
-}
-.hero{
-background:
-radial-gradient(circle at top, rgba(0,170,255,0.25), transparent 40%),
-linear-gradient(to bottom,#050816,#0b1020);
-padding:120px 20px;
-position:relative;
-overflow:hidden;
+.result-card h3 {
+    font-size: 30px;
+    margin: 0;
 }
 
-@keyframes gradientBG{
-0%{
-background-position:0% 50%;
-}
-50%{
-background-position:100% 50%;
-}
-100%{
-background-position:0% 50%;
-}
+.result-card p {
+    color: #bbb;
 }
 
-.btn{
-display:inline-block;
-margin-top:20px;
-padding:14px 30px;
-border-radius:12px;
-background:#0099ff;
-color:white;
-text-decoration:none;
-font-weight:bold;
-transition:0.3s ease;
-box-shadow:0 0 20px rgba(0,153,255,0.5);
+.case-study-block {
+    margin-top: 30px;
 }
 
-.btn:hover{
-transform:translateY(-4px);
-box-shadow:0 0 30px rgba(0,170,255,0.7);
-background:#00bbff;
+.case-study-block h3 {
+    margin-bottom: 10px;
 }
 
-.card{
-background:rgba(255,255,255,0.08);
-border:1px solid rgba(255,255,255,0.1);
-backdrop-filter:blur(10px);
-padding:20px;
-width:250px;
-border-radius:16px;
-text-align:center;
-transition:0.4s ease;
+.strategy-list {
+    list-style: none;
+
+    padding: 0;
+
+    color: #cbd5e1;
+
+    line-height: 1.9;
 }
 
-.card:hover{
-transform:translateY(-10px) scale(1.03);
-box-shadow:0 0 40px rgba(0,170,255,0.25);
-border:1px solid rgba(0,170,255,0.4);
+
+/* =========================
+   PARTICLES
+========================= */
+
+.particles {
+    position: fixed;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(
+            #00aaff 1px,
+            transparent 1px
+        );
+
+    background-size: 40px 40px;
+
+    opacity: 0.08;
+
+    animation:
+        particlesMove 20s linear infinite;
+
+    z-index: 0;
 }
 
-.section{
-opacity:0;
-transform:translateY(40px);
-animation:fadeUp 1s ease forwards;
+@keyframes particlesMove {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-40px);
+    }
+
 }
 
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(40px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-.particles{
-position:fixed;
-width:100%;
-height:100%;
-top:0;
-left:0;
-pointer-events:none;
-background-image:
-radial-gradient(#00aaff 1px, transparent 1px);
-background-size:40px 40px;
-opacity:0.08;
-animation:particlesMove 20s linear infinite;
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: fixed;
+
+    top: 20px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    gap: 25px;
+
+    padding: 12px 25px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    border:
+        1px solid rgba(255,255,255,0.1);
+
+    backdrop-filter:
+        blur(10px);
+
+    border-radius: 20px;
+
+    z-index: 1000;
 }
 
-@keyframes particlesMove{
-from{
-transform:translateY(0);
-}
-to{
-transform:translateY(-40px);
-}
-}
-.navbar{
-position:fixed;
-top:20px;
-left:50%;
-transform:translateX(-50%);
-display:flex;
-gap:25px;
-padding:12px 25px;
-background:rgba(255,255,255,0.08);
-border:1px solid rgba(255,255,255,0.1);
-backdrop-filter:blur(10px);
-border-radius:20px;
-z-index:1000;
+.navbar a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: 0.3s ease;
+
+    white-space: nowrap;
 }
 
-.navbar a{
-color:white;
-text-decoration:none;
-font-size:14px;
-transition:0.3s ease;
+.navbar a:hover {
+    color: #00aaff;
 }
 
-.navbar a:hover{
-color:#00aaff;
-}
-html{
-scroll-behavior:smooth;
+
+/* =========================
+   CONTACT
+========================= */
+
+#contact {
+    position: relative;
+    z-index: 1;
+
+    padding: 80px 20px;
+
+    text-align: center;
 }
 
-.hidden{
-opacity:0;
-transform:translateY(40px);
-transition:all 1s ease;
+#contact p {
+    color: #aaa;
 }
 
-.show{
-opacity:1;
-transform:translateY(0);
-}
-.floating-wa{
-position:fixed;
-bottom:25px;
-right:25px;
-width:60px;
-height:60px;
-background:#00c853;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:30px;
-text-decoration:none;
-color:white;
-box-shadow:0 0 25px rgba(0,200,83,0.6);
-z-index:9999;
-transition:0.3s ease;
+
+/* =========================
+   SOCIAL BUTTONS
+========================= */
+
+.floating-wa,
+.floating-insta,
+.floating-fb {
+    position: fixed;
+
+    right: 25px;
+
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+
+    color: white;
+
+    transition: 0.3s ease;
+
+    z-index: 9999;
 }
 
-.floating-wa:hover{
-transform:scale(1.1);
-box-shadow:0 0 35px rgba(0,200,83,0.9);
-}
-.floating-insta{
-position:fixed;
-bottom:95px;
-right:25px;
-width:60px;
-height:60px;
-background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:28px;
-text-decoration:none;
-color:white;
-box-shadow:0 0 25px rgba(220,39,67,0.6);
-z-index:9999;
-transition:0.3s ease;
+.floating-wa {
+    bottom: 25px;
+
+    background: #00c853;
+
+    font-size: 30px;
+
+    box-shadow:
+        0 0 25px rgba(0,200,83,0.6);
 }
 
-.floating-insta:hover{
-transform:scale(1.1);
-box-shadow:0 0 35px rgba(220,39,67,0.9);
-}
-#loader{
-position:fixed;
-width:100%;
-height:100vh;
-background:#050816;
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-z-index:10000;
-top:0;
-left:0;
-transition:0.8s ease;
-}
-.floating-fb{
-position:fixed;
-bottom:165px;
-right:25px;
-width:60px;
-height:60px;
-background:#1877f2;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:28px;
-text-decoration:none;
-color:white;
-box-shadow:0 0 25px rgba(24,119,242,0.7);
-z-index:9999;
-transition:0.3s ease;
-}
-.floating-fb:hover{
-transform:scale(1.1);
-box-shadow:0 0 35px rgba(24,119,242,1);
-}
-.loader-text{
-font-size:32px;
-font-weight:800;
-letter-spacing:4px;
-color:white;
-text-shadow:0 0 20px #00aaff;
-animation:pulse 1.5s infinite;
+.floating-wa:hover {
+    transform: scale(1.1);
+
+    box-shadow:
+        0 0 35px rgba(0,200,83,0.9);
 }
 
-.loader-dot{
-width:15px;
-height:15px;
-background:#00aaff;
-border-radius:50%;
-margin-top:20px;
-animation:bounce 0.8s infinite alternate;
+
+.floating-insta {
+    bottom: 95px;
+
+    background:
+        linear-gradient(
+            45deg,
+            #f09433,
+            #e6683c,
+            #dc2743,
+            #cc2366,
+            #bc1888
+        );
+
+    font-size: 28px;
+
+    box-shadow:
+        0 0 25px rgba(220,39,67,0.6);
 }
 
-@keyframes pulse{
-0%{opacity:0.5;}
-100%{opacity:1;}
+.floating-insta:hover {
+    transform: scale(1.1);
+
+    box-shadow:
+        0 0 35px rgba(220,39,67,0.9);
 }
 
-@keyframes bounce{
-from{transform:translateY(0);}
-to{transform:translateY(-15px);}
+
+.floating-fb {
+    bottom: 165px;
+
+    background: #1877f2;
+
+    font-size: 28px;
+
+    box-shadow:
+        0 0 25px rgba(24,119,242,0.7);
 }
+
+.floating-fb:hover {
+    transform: scale(1.1);
+
+    box-shadow:
+        0 0 35px rgba(24,119,242,1);
+}
+
+
+/* =========================
+   LOADER
+========================= */
+
+#loader {
+    position: fixed;
+
+    width: 100%;
+    height: 100vh;
+
+    background: #050816;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    z-index: 10000;
+
+    top: 0;
+    left: 0;
+
+    transition: 0.8s ease;
+}
+
+.loader-text {
+    font-size: 32px;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+
+    color: white;
+
+    text-shadow:
+        0 0 20px #00aaff;
+
+    animation:
+        pulse 1.5s infinite;
+}
+
+.loader-dot {
+    width: 15px;
+    height: 15px;
+
+    background: #00aaff;
+
+    border-radius: 50%;
+
+    margin-top: 20px;
+
+    animation:
+        bounce 0.8s infinite alternate;
+}
+
+@keyframes pulse {
+
+    0% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+}
+
+@keyframes bounce {
+
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-15px);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        width: calc(100% - 30px);
+
+        justify-content: center;
+
+        gap: 14px;
+
+        padding: 11px 12px;
+    }
+
+    .navbar a {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding:
+            120px 20px
+            80px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .result-card {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .floating-wa,
+    .floating-insta,
+    .floating-fb {
+        width: 55px;
+        height: 55px;
+
+        right: 18px;
+    }
+
+    .floating-wa {
+        bottom: 18px;
+    }
+
+    .floating-insta {
+        bottom: 83px;
+    }
+
+    .floating-fb {
+        bottom: 148px;
+    }
+
+}
+
 </style>
-
 </head>
 
+
 <body>
+
+
+<!-- =========================
+     LOADER
+========================= -->
+
 <div id="loader">
-<div class="loader-text">KHALID</div>
-<div class="loader-dot"></div>
+
+    <div class="loader-text">
+        KHALID
+    </div>
+
+    <div class="loader-dot"></div>
+
 </div>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
 <div class="navbar">
-<a href="#home">Home</a>
-<a href="#services">Services</a>
-<a href="#case-study-details">Case Study</a>
-<a href="#contact">Contact</a>
+
+    <a href="#home">
+        Home
+    </a>
+
+    <a href="#services">
+        Services
+    </a>
+
+    <a href="#case-study-details">
+        Case Study
+    </a>
+
+    <a href="#contact">
+        Contact
+    </a>
+
 </div>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
 <div class="hero" id="home">
-    <h1>Khalid Mohamed</h1>
-    <p>Performance Media Buyer | Meta, Google & TikTok Ads</p>
-    <p>I help brands turn ad spend into measurable, profitable growth.</p>
-    <a href="https://api.whatsapp.com/send?phone=201022517124" class="btn">Work With Me</a>
+
+    <h1>
+        Khalid Mohamed
+    </h1>
+
+    <p>
+        Performance Media Buyer | Meta, Google & TikTok Ads
+    </p>
+
+    <p>
+        I help brands turn ad spend into measurable, profitable growth.
+    </p>
+
+    <a
+        href="https://api.whatsapp.com/send?phone=201022517124"
+        class="btn"
+        target="_blank"
+    >
+        Work With Me
+    </a>
+
 </div>
+
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
 
 <div class="container">
 
+
+    <!-- SERVICES -->
+
     <div class="section" id="services">
-        <h2>Services & Expertise</h2>
+
+        <h2>
+            Services & Expertise
+        </h2>
+
         <div class="services">
-            <div class="card">Meta Ads & Performance</div>
-            <div class="card">TikTok Ads & Growth</div>
-            <div class="card">Google Ads & Search</div>
-            <div class="card">Snapchat Ads & Acquisition</div>
+
+            <div class="card">
+                Meta Ads & Performance
+            </div>
+
+            <div class="card">
+                TikTok Ads & Growth
+            </div>
+
+            <div class="card">
+                Google Ads & Search
+            </div>
+
+            <div class="card">
+                Snapchat Ads & Acquisition
+            </div>
+
         </div>
+
     </div>
 
+
+    <!-- HOW I DRIVE GROWTH -->
+
     <div class="section">
-    <h2>How I Drive Growth</h2>
+
+        <h2>
+            How I Drive Growth
+        </h2>
+
         <div class="projects">
+
             <div class="card">
                 Full-funnel Meta, Google & TikTok campaigns built for measurable growth
             </div>
+
             <div class="card">
                 Smart targeting, retargeting & continuous audience optimization
             </div>
+
             <div class="card">
                 Conversion-focused funnels, testing & performance optimization
             </div>
+
         </div>
+
     </div>
+
+
+    <!-- INDUSTRIES -->
 
     <div class="section">
-        <h2>Industries I Work With</h2>
+
+        <h2>
+            Industries I Work With
+        </h2>
+
         <div class="services">
-            <div class="card">Fashion & Apparel</div>
-            <div class="card">Watches & Accessories</div>
-            <div class="card">E-commerce & DTC</div>
-            <div class="card">Lighting & Creative Products</div>
+
+            <div class="card">
+                Fashion & Apparel
+            </div>
+
+            <div class="card">
+                Watches & Accessories
+            </div>
+
+            <div class="card">
+                E-commerce & DTC
+            </div>
+
+            <div class="card">
+                Lighting & Creative Products
+            </div>
+
         </div>
+
     </div>
 
-</div>
-
-
-<section id="case-study-details" style="padding:60px 20px; text-align:center; background:#0f172a; color:white;">
-  <h2 style="font-size:28px; margin-bottom:10px;">Case Study — Women's Fashion Campaign</h2>
-  
-  <p style="max-width:600px; margin:auto; color:#cbd5e1;">
-I managed and optimized a performance-driven Meta messaging campaign for a women's fashion brand in Egypt,
-focusing on creative testing, audience optimization, qualified message generation, and improving campaign efficiency.
-</p>
-
-  <div style="margin-top:30px;">
-<h3 style="margin-bottom:20px;">Results</h3>
-
-<div style="display:flex; flex-wrap:wrap; justify-content:center; gap:15px;">
-
-<div style="background:#111; padding:22px; width:210px; border-radius:15px; text-align:center; box-shadow:0 0 15px rgba(0,170,255,0.12);">
-<h3 style="font-size:30px; margin:0;">59+</h3>
-<p style="color:#bbb;">Qualified Messages</p>
-</div>
-
-<div style="background:#111; padding:22px; width:210px; border-radius:15px; text-align:center; box-shadow:0 0 15px rgba(0,170,255,0.12);">
-<h3 style="font-size:30px; margin:0;">7.5 EGP</h3>
-<p style="color:#bbb;">Cost Per Message</p>
-</div>
-
-<div style="background:#111; padding:22px; width:210px; border-radius:15px; text-align:center; box-shadow:0 0 15px rgba(0,170,255,0.12);">
-<h3 style="font-size:30px; margin:0;">447 EGP</h3>
-<p style="color:#bbb;">Total Ad Spend</p>
-</div>
-
-<div style="background:#111; padding:22px; width:210px; border-radius:15px; text-align:center; box-shadow:0 0 15px rgba(0,170,255,0.12);">
-<h3 style="font-size:30px; margin:0;">Strong</h3>
-<p style="color:#bbb;">CTR & Engagement</p>
-</div>
 
 </div>
-</div>
 
-  <div style="margin-top:30px;">
-    <h3 style="margin-bottom:10px;">Strategy</h3>
-    
-    <ul style="list-style:none; padding:0; color:#cbd5e1;">
-      <li>• Tested multiple creatives to identify the strongest-performing product angle</li>
-<li>• Focused budget on the highest-demand product and strongest creative</li>
-<li>• Used duplication to scale winning ad variations while preserving performance</li>
-<li>• Optimized campaigns based on CTR, engagement, and Cost Per Message</li>
-    </ul>
-  </div>
 
-  <div style="margin-top:30px;">
-    <h3 style="margin-bottom:10px;">Key Insight</h3>
-    
-    <p style="max-width:600px; margin:auto; color:#cbd5e1;">
-      Strong ad performance with low cost per result. 
-      The main improvement opportunity was increasing conversion rate 
-      from messages to actual sales through better offers and sales handling.
+<!-- =========================
+     CASE STUDY
+========================= -->
+
+<section id="case-study-details">
+
+
+    <h2 style="font-size:28px; margin-bottom:10px;">
+        Case Study — Women's Fashion Campaign
+    </h2>
+
+
+    <p class="case-study-description">
+
+        I managed and optimized a performance-driven Meta messaging campaign
+        for a women's fashion brand in Egypt, focusing on creative testing,
+        audience optimization, qualified message generation, and improving
+        campaign efficiency.
+
     </p>
-  </div>
 
-  
-  
 
-</div>
+    <!-- RESULTS -->
+
+    <div class="case-study-block">
+
+        <h3 style="margin-bottom:20px;">
+            Results
+        </h3>
+
+
+        <div class="results-grid">
+
+
+            <div class="result-card">
+
+                <h3>
+                    59+
+                </h3>
+
+                <p>
+                    Qualified Messages
+                </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+                <h3>
+                    7.5 EGP
+                </h3>
+
+                <p>
+                    Cost Per Message
+                </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+                <h3>
+                    447 EGP
+                </h3>
+
+                <p>
+                    Total Ad Spend
+                </p>
+
+            </div>
+
+
+            <div class="result-card">
+
+                <h3>
+                    Strong
+                </h3>
+
+                <p>
+                    CTR & Engagement
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- STRATEGY -->
+
+    <div class="case-study-block">
+
+        <h3>
+            Strategy
+        </h3>
+
+
+        <ul class="strategy-list">
+
+            <li>
+                • Tested multiple creatives to identify the strongest-performing product angle
+            </li>
+
+            <li>
+                • Focused budget on the highest-demand product and strongest creative
+            </li>
+
+            <li>
+                • Used duplication to scale winning ad variations while preserving performance
+            </li>
+
+            <li>
+                • Optimized campaigns based on CTR, engagement, and Cost Per Message
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- KEY INSIGHT -->
+
+    <div class="case-study-block">
+
+        <h3>
+            Key Insight
+        </h3>
+
+
+        <p class="case-study-description">
+
+            Strong ad performance with low cost per result.
+            The main improvement opportunity was increasing conversion rate
+            from messages to actual sales through better offers and sales handling.
+
+        </p>
+
+    </div>
+
+
 </section>
+
+
+<!-- PARTICLES -->
+
 <div class="particles"></div>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
 <script>
-const observer = new IntersectionObserver((entries)=>{
-entries.forEach((entry)=>{
-if(entry.isIntersecting){
-entry.target.classList.add("show");
-}
-});
-});
 
-const hiddenElements = document.querySelectorAll(".section");
+const observer = new IntersectionObserver(
+    (entries) => {
 
-hiddenElements.forEach((el)=>{
-el.classList.add("hidden");
-observer.observe(el);
-});
-window.addEventListener("load", ()=>{
-setTimeout(()=>{
-document.getElementById("loader").style.opacity = "0";
-document.getElementById("loader").style.visibility = "hidden";
-},1500);
-});
+        entries.forEach(
+            (entry) => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("show");
+
+                }
+
+            }
+        );
+
+    }
+);
+
+
+const hiddenElements =
+    document.querySelectorAll(".section");
+
+
+hiddenElements.forEach(
+    (el) => {
+
+        el.classList.add("hidden");
+
+        observer.observe(el);
+
+    }
+);
+
+
+window.addEventListener(
+    "load",
+    () => {
+
+        setTimeout(
+            () => {
+
+                const loader =
+                    document.getElementById("loader");
+
+                loader.style.opacity = "0";
+
+                loader.style.visibility = "hidden";
+
+            },
+            1500
+        );
+
+    }
+);
+
 </script>
-<div class="section" id="contact" style="padding:80px 20px; text-align:center;">
-<h2>Contact Me</h2>
-<p style="color:#aaa;">WhatsApp: +201022517124</p>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<div class="section" id="contact">
+
+    <h2>
+        Contact Me
+    </h2>
+
+    <p>
+        WhatsApp: +201022517124
+    </p>
+
 </div>
-<a href="https://www.facebook.com/share/1AnnV5Wc8c/?mibextid=wwXIfr" class="floating-fb">
-<i class="fab fa-facebook-f"></i>
+
+
+<!-- =========================
+     SOCIAL LINKS
+========================= -->
+
+<a
+    href="https://www.facebook.com/share/1AnnV5Wc8c/?mibextid=wwXIfr"
+    class="floating-fb"
+    target="_blank"
+    aria-label="Facebook"
+>
+
+    <i class="fab fa-facebook-f"></i>
+
 </a>
-<a href="https://www.instagram.com/khalid_m3geztoo?igsh=dHhkaHdjcXlpajBr&utm_source=qr" class="floating-insta" target="_blank">
-<i class="fab fa-instagram"></i>
+
+
+<a
+    href="https://www.instagram.com/khalid_m3geztoo?igsh=dHhkaHdjcXlpajBr&utm_source=qr"
+    class="floating-insta"
+    target="_blank"
+    aria-label="Instagram"
+>
+
+    <i class="fab fa-instagram"></i>
+
 </a>
-<a href="https://wa.me/201022517124" class="floating-wa"><i class="fab fa-whatsapp"></i></a>
+
+
+<a
+    href="https://wa.me/201022517124"
+    class="floating-wa"
+    target="_blank"
+    aria-label="WhatsApp"
+>
+
+    <i class="fab fa-whatsapp"></i>
+
+</a>
+
+
 </body>
 </html>
