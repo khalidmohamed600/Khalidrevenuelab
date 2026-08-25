@@ -20,6 +20,7 @@
 
 html{
     scroll-behavior:smooth;
+    scroll-restoration:manual;
 }
 
 body{
@@ -2042,19 +2043,96 @@ body.page-loaded .hero-content{
 <script>
 
 /* =========================
+   FORCE NEW PAGE TO START
+   FROM THE TOP
+========================= */
+
+/*
+   Tell the browser NOT to restore
+   the previous scroll position.
+*/
+
+if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+}
+
+
+/*
+   Immediately force the page to top.
+*/
+
+window.scrollTo(0, 0);
+
+
+/* =========================
    PREMIUM PAGE LOADER
 ========================= */
 
 window.addEventListener("load",function(){
 
+    /*
+       Make absolutely sure the page
+       starts from Home before loader ends.
+    */
+
+    window.scrollTo({
+        top:0,
+        left:0,
+        behavior:"instant"
+    });
+
+
+    /*
+       Keep the original 1800ms loading time.
+    */
+
     setTimeout(function(){
 
         document.getElementById("loader").style.opacity="0";
+
         document.getElementById("loader").style.visibility="hidden";
 
         document.body.classList.add("page-loaded");
 
+
+        /*
+           Final safety check:
+           after Loading disappears,
+           remain at the very top.
+        */
+
+        window.scrollTo({
+            top:0,
+            left:0,
+            behavior:"instant"
+        });
+
     },1800);
+
+});
+
+
+/* =========================
+   HANDLE PAGE SHOW / BFCACHE
+========================= */
+
+window.addEventListener("pageshow",function(event){
+
+    /*
+       If the browser restores the page
+       from memory/back-forward cache,
+       force it back to the top.
+    */
+
+    if(event.persisted){
+
+        window.scrollTo({
+            top:0,
+            left:0,
+            behavior:"instant"
+        });
+
+    }
 
 });
 
@@ -2074,11 +2152,17 @@ const counterObserver = new IntersectionObserver((entries, observer) => {
         const counter = entry.target;
 
         const target = parseFloat(counter.dataset.target);
+
         const suffix = counter.dataset.suffix || "";
-        const decimals = parseInt(counter.dataset.decimals || "0");
+
+        const decimals = parseInt(
+            counter.dataset.decimals || "0"
+        );
 
         let start = 0;
+
         const duration = 1800;
+
         const startTime = performance.now();
 
         function updateCounter(currentTime){
@@ -2119,6 +2203,7 @@ const counterObserver = new IntersectionObserver((entries, observer) => {
 },{
     threshold:0.5
 });
+
 
 counters.forEach(counter => {
 
